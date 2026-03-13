@@ -26,7 +26,7 @@ class MLP(nn.Module):
         self.hidden_layers = [nn.Linear(in_features=hidden_dimension, out_features = hidden_dimension, bias=True)
                                 for i in range(n_hidden_layers)]
         
-        self.output_layer = nn.Linear(in_features=hidden_dimension, out_features = hidden_dimension,bias=False)
+        self.output_layer = nn.Linear(in_features=hidden_dimension, out_features = output_dimension,bias=True)
         self.activation = nn.ReLU()
         self.dropout = nn.Dropout(p = dropout_p) 
         self.batchnorm = nn.BatchNorm1d(hidden_dimension)
